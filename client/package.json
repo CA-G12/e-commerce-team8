@@ -12,7 +12,8 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "sweetalert": "^2.1.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "eslint-config-airbnb": "^19.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,7 +42,6 @@
   "proxy": "http://localhost:3000",
   "devDependencies": {
     "eslint": "^8.24.0",
-    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
