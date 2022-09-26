@@ -1,5 +1,3 @@
 const authenticate = require('./verifyToken');
 
-module.exports = {
-  authenticate
-};
+module.exports = { authenticate };
