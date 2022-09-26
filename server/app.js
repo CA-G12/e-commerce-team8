@@ -24,7 +24,7 @@ if (NODE_ENV === 'production'){
 app.use(router)
 
 app.use((err, req, res, next) => {
-  console.log(err);
+  res.status(err.status || 500).json({ message: err.msg || 'something went wrong' })
 });
 
 module.exports = app;
