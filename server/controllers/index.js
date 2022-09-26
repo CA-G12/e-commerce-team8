@@ -1,8 +1,9 @@
 const { signUp, signIn } = require("./register");
-const { getAllProduct } = require("./products");
+const { getAllProduct, buyProduct } = require("./products");
 
 module.exports = {
   signUp,
   signIn,
   getAllProduct,
+  buyProduct
 };
