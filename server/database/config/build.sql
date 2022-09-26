@@ -13,7 +13,7 @@ CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100),
     price INT,
-    imgUrl VARCHAR(100),
+    imgUrl VARCHAR(500),
     description TEXT
 );
 
