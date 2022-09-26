@@ -3,11 +3,12 @@
         "browser": true,
         "es2021": true
     },
+    "root": true,
     "extends": [
         "plugin:react/recommended",
         "airbnb",
-        "prettier"
-        "stylelint-config-prettier"
+        "prettier",
+        "plugin:react/jsx-runtime"
     ],
     "overrides": [
     ],
@@ -19,5 +20,6 @@
         "react"
     ],
     "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
 }
