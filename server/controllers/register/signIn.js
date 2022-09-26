@@ -6,22 +6,25 @@ const { signInValidation } = require("../../validation");
 
 const signIn = (req, res, next) => {
   const user = req.body;
-  const { error, value } = signInValidation.validate(user);
-  if (error) console.error("validate error: ", error.details[0].message);
-  else console.log("validate value: ", value);
   let dbUser = [];
-  checkEmailQuery(user)
+  signInValidation
+    .validateAsync(user)
+    .then((result) => result)
+    .catch((err) => {
+      throw new GenerateError(400, err.details[0].message);
+    })
+    .then(() => checkEmailQuery(user))
     .then((data) => {
       if (data.rows.length) {
         dbUser = data.rows;
         return data.rows[0];
       }
-      throw new GenerateError("400", "The email is not found");
+      throw new GenerateError(400, "The email is not found");
     })
     .then((result) => bcrypt.compare(user.password, result.password))
     .then((same) => {
       if (!same) {
-        throw new GenerateError("400", "The password is incorrect");
+        throw new GenerateError(400, "The password is incorrect");
       }
       return user;
     })
