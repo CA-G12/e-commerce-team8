@@ -30,7 +30,7 @@ const signUp = (req, res, next) =>{
         return generateToken(payload)
     })
     .then((token) => {
-        res.cookie(token, 'token', {httpOnly : true})
+        res.cookie('token', token, {httpOnly : true})
         .status(200)
         .json({ message : 'Welcome To Our Website' })
     })

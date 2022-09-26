@@ -5,6 +5,6 @@ const { getAllProduct } = require("./products");
 module.exports = {
   signUp,
   signIn,
-  getCartProducts
+  getCartProducts,
   getAllProduct,
 };
