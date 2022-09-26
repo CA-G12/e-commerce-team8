@@ -6,7 +6,6 @@ const {
     } = require('./products');
 
 const {
-    signInQuery,
     signUpQuery,
     checkEmailQuery
    } = require('./register')    
@@ -17,7 +16,6 @@ module.exports = {
     deleteProductQuery,
     getAllProductsQuery,
     getCartProductsQuery,
-    signInQuery,
     signUpQuery,
     checkEmailQuery
 }   
