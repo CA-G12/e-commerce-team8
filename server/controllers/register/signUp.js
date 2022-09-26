@@ -25,7 +25,7 @@ const signUp = (req, res, next) =>{
     })
     .then((hash) => signUpQuery({ name, email, hash }))
     .then((data) => {
-        const { id, username } = data.rows
+        const { id, username } = data.rows[0]
         const payload = { id, username };
         return generateToken(payload)
     })
