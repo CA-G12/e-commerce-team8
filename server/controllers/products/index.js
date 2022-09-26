@@ -1,3 +1,7 @@
-const { buyProduct } = require('./buyProduct');
+const buyProduct = require('./buyProduct');
+const getAllProduct = require('./getAll');
 
-module.exports = { buyProduct };
+module.exports = {
+    getAllProduct,
+    buyProduct,
+}
