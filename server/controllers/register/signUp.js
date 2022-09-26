@@ -25,12 +25,12 @@ const signUp = (req, res, next) =>{
     })
     .then((hash) => signUpQuery({ name, email, hash }))
     .then((data) => {
-        const { id, username } = data.rows
+        const { id, username } = data.rows[0]
         const payload = { id, username };
         return generateToken(payload)
     })
     .then((token) => {
-        res.cookie(token, 'token', {httpOnly : true})
+        res.cookie('token', token, {httpOnly : true})
         .status(200)
         .json({ message : 'Welcome To Our Website' })
     })

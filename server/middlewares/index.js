@@ -1,3 +1,5 @@
-const { authenticate } = require('./verifyToken');
+const authenticate = require('./verifyToken');
 
-module.exports = authenticate;
+module.exports = {
+  authenticate
+};
