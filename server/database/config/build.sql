@@ -14,6 +14,7 @@ CREATE TABLE products (
     title VARCHAR(100),
     price INT,
     imgUrl VARCHAR(500),
+    category VARCHAR(100),
     description TEXT
 );
 
