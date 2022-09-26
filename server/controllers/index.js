@@ -1,8 +1,11 @@
 const { signUp, signIn } = require("./register");
-const { getAllProduct , deleteProduct} = require("./products");
+const { getAllProduct, buyProduct, getCartProducts, deleteProduct} = require("./products");
 
 module.exports = {
   signUp,
   signIn,
-  getAllProduct,deleteProduct,
+  getAllProduct,
+  deleteProduct,
+  getCartProducts,
+  buyProduct
 };

@@ -1,17 +1,15 @@
 const { deleteProductQuery } = require("../../database/queries/products");
-const { GenerateError } = require("../../utils/customError");
 
-const deleteProduct = (req, res) => {
+const deleteProduct = (req, res, next) => {
   const productId = req.params.id;
-  const { user_id } = req.body;
-  deleteProductQuery(user_id, productId)
-    .then((data) => data.rows[0])
-    .then((row) => row.id)
-    .then((id) => {
-      res.status(200).json({ msg: `delete product with id ${id}` });
+  const userId = req.data.id;
+
+  deleteProductQuery(userId, productId)
+    .then((data) => {
+      res.status(200).json({ message: "product deleted successfully" });
     })
     .catch((error) => {
-      GenerateError(500, error);
+      next(error);
     });
 };
 
