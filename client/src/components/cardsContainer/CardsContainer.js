@@ -8,23 +8,22 @@ import axios from "axios";
 import "./CardsContainer.css";
 import Card from "../card/Card";
 
-export default function CardsContainer() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+export default function CardsContainer({ category, arr }) {
+  const [items, SetItem] = useState(null);
+
   useEffect(() => {
-    axios.get("/products").then((res) => {
-      setData(res.data);
-      setLoading(false);
-    });
-  }, []);
+    const result = arr.filter((ele) =>
+      category === "All"
+        ? true
+        : ele.category.toLowerCase() === category.toLowerCase()
+    );
+    SetItem(result);
+  }, [category]);
 
-  //  console.log(data);
-
-  if (!data) return <div> {loading}</div>;
-
+  if (!items) return <p>Loading ...</p>;
   return (
     <div className="container">
-      {data.map((element) => {
+      {items.map((element) => {
         const info = {
           id: element.id,
           title: element.title,
@@ -33,7 +32,7 @@ export default function CardsContainer() {
           category: element.category,
           description: element.description,
         };
-        return <Card information={info} key={info.id} />;
+        return <Card information={info} key={element.id} />;
       })}
     </div>
   );

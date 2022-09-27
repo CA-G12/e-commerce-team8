@@ -1,27 +1,34 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react';
-import axios from 'axios'
-import swal from 'sweetalert';
-import Navbar from '../navbar/Navbar';
-import Categories from '../categories/Categories';
-import CardsContainer from '../cardsContainer/CardsContainer';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Navbar from "../navbar/Navbar";
+import Categories from "../categories/Categories";
+import CardsContainer from "../cardsContainer/CardsContainer";
 
 export default function Landing() {
-    const[data, setData]=useState(null)
+  const [data, setData] = useState(null);
+  const [category, setCategory] = useState("All");
 
+  const categoryHandleChane = (newCategory) => {
+    setCategory(newCategory);
+  };
   useEffect(() => {
-    axios.get("products").then((res) => {
-      setData(res.data);
-    });
+    axios
+      .get("/products")
+      .then((res) => {
+        setData(res.data.products);
+        // setData(res.data.products);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
+  if (!data) return <div> Loading........</div>;
 
-  if(!data) return <div> loading ...</div>
   return (
     <>
       <Navbar />
-      <Categories />
-      <CardsContainer />
+      <Categories arr={data} categoryHandleChange={categoryHandleChane} />
+      <CardsContainer arr={data} category={category} />
     </>
-  )
+  );
 }
