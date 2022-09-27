@@ -1,0 +1,32 @@
+.signup{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.signup > *{
+    width: 100%;
+}
+
+.signup .signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup .signup-form input {
+    width: 92%;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.signup p {
+    color: red;
+}
+
+.signup button{
+    background-color: #77C754;
+    color: #fff;
+    border: 0;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
