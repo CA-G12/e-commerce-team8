@@ -1,0 +1,37 @@
+
+.sign-in-body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+.sign-in-form {
+  align-self: center;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.form-input {
+  padding: 16px;
+  margin: 16px;
+  border: 1px solid rgb(198, 192, 192);
+  border-radius: 16px;
+  width: 70%;
+}
+.form-input-submit {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+.form-input-submit:hover {
+  background-color: rgb(0, 181, 0);
+  color: white;
+}
+.handle-error {
+  margin: 0px;
+  color: red;
+}
