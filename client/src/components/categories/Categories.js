@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 import swal from 'sweetalert';
 
-export default function Signup() {
+export default function Categories() {
   return (
-    <div>sign up</div>
+    <div>Categories</div>
   )
 }
