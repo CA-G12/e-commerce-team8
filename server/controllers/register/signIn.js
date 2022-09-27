@@ -31,7 +31,7 @@ const signIn = (req, res, next) => {
     .then(() => {
       const payload = {
         id: dbUser[0].id,
-        username: dbUser[0].name,
+        username: dbUser[0].username,
       };
       return generateToken(payload);
     })
