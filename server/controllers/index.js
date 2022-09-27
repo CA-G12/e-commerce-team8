@@ -1,5 +1,5 @@
 const { signUp, signIn, signOut } = require("./register");
-const { getAllProduct, buyProduct, getCartProducts, deleteProduct } = require("./products");
+const { getAllProduct, buyProduct, getCartProducts, deleteProduct, getProductById } = require("./products");
 
 module.exports = {
   signUp,
@@ -8,5 +8,6 @@ module.exports = {
   getAllProduct,
   deleteProduct,
   getCartProducts,
-  buyProduct
+  buyProduct,
+  getProductById,
 };

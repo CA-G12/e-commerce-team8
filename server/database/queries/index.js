@@ -1,14 +1,15 @@
 const {
-     buyProductQuery,
-     deleteProductQuery,
-     getAllProductsQuery,
-      getCartProductsQuery
-    } = require('./products');
+    buyProductQuery,
+    deleteProductQuery,
+    getAllProductsQuery,
+    getCartProductsQuery,
+    getProductQuery,
+} = require('./products');
 
 const {
     signUpQuery,
     checkEmailQuery
-   } = require('./register')    
+} = require('./register')
 
 
 module.exports = {
@@ -17,5 +18,6 @@ module.exports = {
     getAllProductsQuery,
     getCartProductsQuery,
     signUpQuery,
-    checkEmailQuery
+    checkEmailQuery,
+    getProductQuery,
 }   
