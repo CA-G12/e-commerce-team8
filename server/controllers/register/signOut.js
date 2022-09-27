@@ -1,4 +1,5 @@
 const signUp = (req, res) => {
-    res.clearCookie('token').send({ message: ' You signed Out ' })
+    const { id } = req.data;
+    res.clearCookie('token').send({ message: `Goodbye user${id}, we wish you a nice day ` });
 }
 module.exports = signUp;
