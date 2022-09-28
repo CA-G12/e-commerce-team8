@@ -1,6 +1,3 @@
-/* eslint-disable spaced-comment */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 const connection = require("./connection");
 const products = require("./products");
 
@@ -10,13 +7,17 @@ const insertProduct = (title, price, imgUrl, category, description) =>
     [title, price, imgUrl, category, description]
   );
 
-products.forEach((ele) => {
-  insertProduct(
-    ele.title,
-    ele.price,
-    ele.imgURL,
-    ele.category,
-    ele.category,
-    ele.description
-  );
-});
+const addProducts = () => {
+  products.forEach((ele) => {
+    insertProduct(
+      ele.title,
+      ele.price,
+      ele.imgURL,
+      ele.category,
+      ele.category,
+      ele.description
+    );
+  });
+};
+
+module.exports = addProducts;
