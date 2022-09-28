@@ -9,14 +9,17 @@ export default function Signin() {
     password: "",
     email: "",
   });
-
+  const [errMassage, setMessage] = useState(null);
   const submit = () => {
     axios
       .post("/signin", data)
       .then((response) => response.data.message)
       .then((message) => swal("Signed In", message, "success"))
+      .then(() => {
+        window.location.href = "/";
+      })
       .catch((error) => {
-        swal("Error happened!", error.response.data.message, "error");
+        setMessage(error.response.data.message);
       });
   };
 
@@ -50,11 +53,16 @@ export default function Signin() {
           }}
           type="password"
           name="password"
-          id="email"
+          id="password"
           placeholder="Password"
           required
         />
-        <p className="handle-error">{data.error}</p>
+        <p
+          className="handle-error"
+          style={errMassage ? { display: "block" } : { display: "none" }}
+        >
+          {errMassage}
+        </p>
         <button
           className="form-input form-input-submit"
           onClick={submit}

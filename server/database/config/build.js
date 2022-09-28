@@ -1,16 +1,10 @@
-require('dotenv').config();
-  const fs = require('fs');
-  const connection = require('./connection');
-  
-  const sqlFile = fs.readFileSync('./server/database/config/build.sql', 'utf8');
-  
-  connection.query(sqlFile, (err, res) => {
-    if (err) {
-      console.log('Error creating tables: ', err);
-    }
-  
-    console.log('Tables created successfully');
-  });
-  
-  connection.end();
- 
+const { readFileSync } = require("fs");
+const { join } = require("path");
+const connection = require("./connection");
+
+const build = () => {
+  const sql = readFileSync(join(__dirname, ".", "build.sql"));
+  return connection.query(sql.toString());
+};
+
+module.exports = build;
