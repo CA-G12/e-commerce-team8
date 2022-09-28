@@ -32,3 +32,13 @@ body{
 
 /* Add a grey background color on mouse-over */
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pageList{
+    display: "flex";
+    justify-Content: "space-evenly";
+        width: "200px";
+        margin-Left: "auto";
+        margin-Right: "auto";
+        padding: "20px";
+        list-Style: none;
+}

@@ -42,6 +42,7 @@ font-weight: bold;
     background-color: #fafafa;
     border: solid #fafafa;
     font-weight: 800;
+    cursor: pointer;
 }
 button:first-of-type{
     color: #77C754;
