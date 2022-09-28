@@ -21,12 +21,12 @@ function CartItem({ productInfo }) {
                 }
                 return null
             })
-            .then(res => res ? res.data.message : 'kihuhuh')
+            .then(res => res ? res.data.message : '')
             .then(msg => {
+                if (!msg) return
                 swal('Deleted', msg, 'deleted')
             })
-            .catch(err => swal(err.response.data.message, '', 'error'))
-
+            .catch(err => swal(err.response.data.message, '', 'warning'))
     }
 
     return (
