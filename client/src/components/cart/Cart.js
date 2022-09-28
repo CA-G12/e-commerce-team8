@@ -7,22 +7,29 @@ import Navbar from '../navbar/Navbar';
 
 function Cart() {
   const [data, setData] = useState(null)
+  const [username, setUsername] = useState('')
 
   useEffect(() => {
     axios
       .get('/product/cart')
-      .then((result) => setData(result.data.data))
-      .catch((error) => swal('Error', 'you cannot do this action', 'error').then(() => {
-        window.location.href = "/";
-      }))
+      .then((result) => {
+        setData(result.data.data);
+        setUsername(result.data.username);
+      })
+      .catch((error) => { window.location.href = "/"; })
   }, [data])
 
   if (!data) return <div>Loading ...</div>
 
-  return (
+  return data.length ? (
     <div className='cart'>
-      <Navbar user={data[0].username} />
+      <Navbar user={username} />
       {data.map((e) => <CartItem key={e.product_id} productInfo={e} />)}
+    </div>
+  ) : (
+    <div className='cart'>
+      <Navbar user={username} />
+      <p>You have not bought anything yet</p>
     </div>
   )
 }
