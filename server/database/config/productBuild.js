@@ -16,7 +16,6 @@ products.forEach((ele) => {
     ele.price,
     ele.imgURL,
     ele.category,
-    ele.category,
     ele.description
   );
 });
