@@ -8,11 +8,25 @@ function CartItem({ productInfo }) {
 
     function cancelProduct(productId) {
         console.log(productId);
-        axios
-            .delete(`/product/delete/${productId}`)
-            .then(res => res.data.message)
-            .then(msg => swal('Deleted', msg))
-            .catch(err => console.log(err))
+        swal({
+            title: "Are you sure?",
+            text: "Are you sure that you want to delete this product?",
+            icon: "warning",
+            dangerMode: true,
+        })
+            .then(willDelete => {
+                if (willDelete) {
+                    return axios
+                        .delete(`/product/delete/${productId}`)
+                }
+                return null
+            })
+            .then(res => res ? res.data.message : 'kihuhuh')
+            .then(msg => {
+                swal('Deleted', msg, 'deleted')
+            })
+            .catch(err => swal(err.response.data.message, '', 'error'))
+
     }
 
     return (
