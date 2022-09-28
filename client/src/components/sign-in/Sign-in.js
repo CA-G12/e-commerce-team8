@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
+import { Link } from "react-router-dom";
 import "./Sign-in.css";
 
 export default function Signin() {
@@ -25,7 +26,7 @@ export default function Signin() {
 
   return (
     <div className="sign-in-body">
-      <h3 style={{ textAlign: "center" }}>Sign in</h3>
+      <h2 style={{ textAlign: "center" }}>Sign in</h2>
       <form className="sign-in-form">
         <input
           className="form-input"
@@ -70,6 +71,7 @@ export default function Signin() {
         >
           Sign in
         </button>
+        <p className="text">Do not have an account? <Link to='/signup' style={{color : '#77C754'}}>Sing up</Link> or <Link to='/' style={{color : '#77C754'}}>return home</Link></p>
       </form>
     </div>
   );
