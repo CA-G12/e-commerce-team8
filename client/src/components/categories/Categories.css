@@ -1,0 +1,56 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Inter';
+font-weight: bold;
+}
+
+.categoryContainer{
+    background-color: rgb(179, 164, 164);
+    width: 876px;
+    height: 59px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    filter: drop-shadow(0px 4px 4px rgba(148, 148, 148, 0.25));
+    background: #FAFAFA;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.categoryContainer .name{
+    display: flex;
+    color: #77C754;
+    align-items: center;
+  
+}
+
+.categoryContainer .name p{
+    color: #77C754;
+    padding: 8px;
+}
+
+
+.categoryContainer .buttons button{
+    min-width: 51px;
+    height: 32px;
+    background-color: #fafafa;
+    border: solid #fafafa;
+    font-weight: 800;
+}
+button:first-of-type{
+    color: #77C754;
+    border-bottom: 2px solid #77C754;
+}
+.categoryContainer .buttons button:focus{
+    color: #77C754;
+    border-bottom: 2px solid #77C754;
+}
+.categoryContainer .buttons button:hover{
+     color: #77C754;
+}

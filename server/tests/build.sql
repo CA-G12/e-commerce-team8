@@ -4,9 +4,9 @@ DROP TABLE IF EXISTS users, products, cart CASCADE;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL
+    username VARCHAR(100),
+    email VARCHAR(100),
+    password VARCHAR(100)
 );
 
 CREATE TABLE products (

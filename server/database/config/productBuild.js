@@ -14,7 +14,6 @@ const addProducts = () => {
       ele.price,
       ele.imgURL,
       ele.category,
-      ele.category,
       ele.description
     );
   });
