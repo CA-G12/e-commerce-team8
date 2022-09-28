@@ -2,6 +2,17 @@
     width: 50%;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.signup h2{
+    font-size: 3rem;
+    color: #77C754;
+    margin-bottom: 1.5rem;
 }
 
 .signup > *{
@@ -9,24 +20,55 @@
 }
 
 .signup .signup-form {
-    display: flex;
-    flex-direction: column;
+  align-self: center;
+  width: 57%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .signup .signup-form input {
-    width: 92%;
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.5rem;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 0.7rem;
+    border-radius: 5px;
+    outline: 0;
+    border: solid #000 1px;
 }
 
-.signup p {
+.signup .signup-form input:focus::placeholder{
+    color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.signup .message {
     color: red;
+    margin-bottom: 1rem;
+}
+
+.signup .text{
+    margin-bottom: 1rem;
+    color: #000;
+    text-align: left;
 }
 
 .signup button{
     background-color: #77C754;
+    border-radius: 5px;
     color: #fff;
     border: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     width: 100%;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.signup button:hover{
+    filter: brightness(1.1);
 }
