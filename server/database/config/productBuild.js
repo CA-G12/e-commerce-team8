@@ -19,4 +19,5 @@ const addProducts = () => {
   });
 };
 
+addProducts()
 module.exports = addProducts;
