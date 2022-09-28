@@ -41,7 +41,7 @@ export default function Landing() {
 
   return (
     <>
-      <Navbar />
+      <Navbar user={user}/>
       <Categories arr={data} categoryHandleChange={categoryHandleChane} />
       <CardsContainer arr={data} user={user} />
     </>
