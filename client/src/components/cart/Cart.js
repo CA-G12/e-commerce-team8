@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import axios from 'axios'
-import swal from 'sweetalert';
 import CartItem from '../cartItem/CartItem';
 import Navbar from '../navbar/Navbar';
 
@@ -16,7 +14,7 @@ function Cart() {
         setData(result.data.data);
         setUsername(result.data.username);
       })
-      .catch((error) => { window.location.href = "/"; })
+      .catch(() => { window.location.href = "/"; })
   }, [data])
 
   if (!data) return <div>Loading ...</div>
