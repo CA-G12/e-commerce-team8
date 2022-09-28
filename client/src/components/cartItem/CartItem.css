@@ -1,0 +1,22 @@
+.cartItem {
+    margin: 0.7rem;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 20%;
+    border: solid 1px rgb(49, 49, 49);
+}
+
+.cartItem button {
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.cartItem button:hover {
+    background-color: rgb(133, 33, 33);
+    transform: 0.7;
+}
