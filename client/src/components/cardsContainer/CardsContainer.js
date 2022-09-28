@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unstable-nested-components */
@@ -8,17 +10,13 @@ import axios from "axios";
 import "./CardsContainer.css";
 import Card from "../card/Card";
 
-export default function CardsContainer({ category, arr }) {
+export default function CardsContainer({ category, arr , user}) {
   const [items, SetItem] = useState(null);
 
   useEffect(() => {
-    const result = arr.filter((ele) =>
-      category === "All"
-        ? true
-        : ele.category.toLowerCase() === category.toLowerCase()
-    );
-    SetItem(result);
-  }, [category]);
+    SetItem(arr);
+  }, [arr]);
+
 
   if (!items) return <p>Loading ...</p>;
   return (
@@ -30,9 +28,8 @@ export default function CardsContainer({ category, arr }) {
           price: element.price,
           imgurl: element.imgurl,
           category: element.category,
-          description: element.description,
         };
-        return <Card information={info} key={element.id} />;
+        return <Card information={info} key={element.id} user = {user}/>;
       })}
     </div>
   );
