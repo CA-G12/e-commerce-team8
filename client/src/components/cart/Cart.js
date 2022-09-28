@@ -12,15 +12,16 @@ function Cart() {
     axios
       .get('/product/cart')
       .then((result) => setData(result.data.data))
-      .catch((error) => console.log(error))
+      .catch((error) => swal('Error', error.message).then(() => {
+        window.location.href = "/";
+      }))
   }, [data])
 
   if (!data) return <div>Loading ...</div>
   return (
     <div className='cart'>
-      {data.map((e) => <CartItem key={e.id} productInfo={e} />)}
-      {/*  <Navbar />
-      <CartItem cardInfo={data} /> */}
+      <Navbar />
+      {data.map((e) => <CartItem key={e.product_id} productInfo={e} />)}
     </div>
   )
 }
