@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node server/server.js",
     "dev": "cross-env NODE_ENV=development nodemon server/server.js",
-    "build": "cross-env NODE_ENV=development node server/database/config/productBuild.js",
+    "build": "cross-env NODE_ENV=production node server/database/config/productBuild.js",
     "test": "cross-env NODE_ENV=test jest --watch",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "stylelint-check": "stylelint-config-prettier-check"
