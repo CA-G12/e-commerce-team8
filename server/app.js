@@ -12,7 +12,7 @@ app.disable('x-powered-by');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use(router)
+app.use('/api/v1',router)
 
 if (NODE_ENV === 'production'){
   app.use(express.static(join(__dirname, '..', 'client', 'build')));

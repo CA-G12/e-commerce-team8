@@ -13,7 +13,7 @@ export default function Signin() {
   const [errMassage, setMessage] = useState(null);
   const submit = () => {
     axios
-      .post("/signin", data)
+      .post("/api/v1/signin", data)
       .then((response) => response.data.message)
       .then((message) => swal("Signed In", message, "success"))
       .then(() => {

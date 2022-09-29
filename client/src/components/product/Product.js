@@ -15,7 +15,7 @@ export default function Product(props) {
 
   useEffect(() => {
     const endpoint = window.location.pathname;
-    axios.get(endpoint)
+    axios.get(`/api/v1/${endpoint}`)
      .then((res) => {
       setData(res.data.data[0])
      })
@@ -25,7 +25,7 @@ export default function Product(props) {
   }, [])
 
   const handleAddToCart = () => {
-    axios.get(`/product/buy/${data.id}`)
+    axios.get(`/api/v1/product/buy/${data.id}`)
     .then((res) =>{
       swal(res.data.message, '', "success");
     })

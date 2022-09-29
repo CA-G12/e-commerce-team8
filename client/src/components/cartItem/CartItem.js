@@ -16,7 +16,7 @@ function CartItem({ productInfo }) {
             .then(willDelete => {
                 if (willDelete) {
                     return axios
-                        .delete(`/product/delete/${productId}`)
+                        .delete(`/api/v1/product/delete/${productId}`)
                 }
                 return null
             })

@@ -28,7 +28,7 @@ export default function Signup() {
       swal("Warning!", "Please fill in all fields!", "warning");
     } else {
       axios
-        .post("/signup", user)
+        .post("/api/v1/signup", user)
         .then((res) => {
           swal("hello", res.data.message, "success").then(() => {
             window.location.href = "/";
