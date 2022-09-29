@@ -39,6 +39,11 @@ export default function Landing() {
     setCurrentPage(currentNum);
   };
 
+  const searchItems = (item) =>{
+    const result = products.filter((ele) =>ele.title.toLowerCase().includes(item));
+    setData(result.slice(0, 10));
+  }
+
   useEffect(() => {
     axios.get("/products").then((res) => {
       setData(res.data.products.slice(0, 10));
@@ -54,7 +59,7 @@ export default function Landing() {
   if (!data) return <div> Loading........</div>;
   return (
     <>
-      <Navbar user={user} />
+      <Navbar user={user} searchItems={searchItems}/>
       <Categories arr={data} categoryHandleChange={categoryHandleChane} />
       <CardsContainer arr={data} user={user}/>
       <Pagination
