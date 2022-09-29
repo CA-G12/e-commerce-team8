@@ -1,5 +1,5 @@
 .signup{
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -21,8 +21,8 @@
 
 .signup .signup-form {
   align-self: center;
-  width: 57%;
-  height: 50%;
+  width: 35%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
