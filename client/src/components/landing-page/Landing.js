@@ -51,12 +51,12 @@ export default function Landing() {
     categoryHandleChane(newcategory);
   }, [currentPage]);
 
-  if (!data || !user) return <div> Loading........</div>;
+  if (!data) return <div> Loading........</div>;
   return (
     <>
       <Navbar user={user} />
       <Categories arr={data} categoryHandleChange={categoryHandleChane} />
-      <CardsContainer arr={data} />
+      <CardsContainer arr={data} user={user}/>
       <Pagination
         productsPerPage={productsPerPage}
         totalProducts={50}
