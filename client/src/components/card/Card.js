@@ -10,8 +10,8 @@ export default function Card(props) {
   return (
     <Link
       to={`/product/${props.information.id}`}
-      style={{ textDecoration: "none" }} 
-      state={{name: props.user}}
+      style={{ textDecoration: "none" }}
+      state={{ name: props.user }}
     >
       <div key={props.information.id} className="card">
         <div className="imgBox">
@@ -25,7 +25,7 @@ export default function Card(props) {
           </div>
           {/* {props.information.title} */}
           <div className="productName">
-            <h3>product name</h3>
+            <h3>{props.information.title}</h3>
           </div>
           <div className="price">
             <p>{props.information.price.toFixed(2)}$</p>
