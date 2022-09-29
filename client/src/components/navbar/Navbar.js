@@ -18,7 +18,7 @@ export default function Navbar({ user, searchItems }) {
     
 
     const handleSignOut = () => {
-        axios.get('/signout')
+        axios.get('/api/v1/signout')
          .then((res) => {
             swal(res.data.message, '', 'success')
              .then(() => setUserName(''))

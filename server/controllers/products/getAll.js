@@ -2,7 +2,7 @@ const { getAllProductsQuery } = require("../../database/queries");
 const { GenerateError } = require("../../utils/customError");
 const { verifyToken } = require("../../utils/tokenPromise");
 
-const getAllProduct = (req, res) => {
+const getAllProduct = (req, res, next) => {
   const { token } = req.cookies;
   let user;
   verifyToken(token)
@@ -18,7 +18,8 @@ const getAllProduct = (req, res) => {
       res.json({ user, products });
     })
     .catch((err) => {
-      GenerateError(500, err);
+      console.log(err)
+      next(new GenerateError(500, err));
     });
 };
 

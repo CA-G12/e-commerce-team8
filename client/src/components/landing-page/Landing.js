@@ -45,7 +45,7 @@ export default function Landing() {
   }
 
   useEffect(() => {
-    axios.get("/products").then((res) => {
+    axios.get("/api/v1/products").then((res) => {
       setData(res.data.products.slice(0, 10));
       setProducts(res.data.products);
       setUser(res.data.user);

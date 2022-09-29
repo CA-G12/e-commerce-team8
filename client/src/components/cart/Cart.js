@@ -10,7 +10,7 @@ function Cart() {
 
   useEffect(() => {
     axios
-      .get("/product/cart")
+      .get("/api/v1/product/cart")
       .then((result) => {
         setData(result.data.data);
         setUsername(result.data.username);
