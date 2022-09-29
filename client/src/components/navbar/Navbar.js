@@ -8,8 +8,9 @@ import axios from 'axios'
 import swal from 'sweetalert';
 import './Navbar.css'
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, searchItems }) {
     const [userName, setUserName] = useState('')
+    const [search, setSearch] = useState('')
 
     useEffect(() =>{
         setUserName(user)
@@ -24,6 +25,11 @@ export default function Navbar({ user }) {
          })
     }
 
+    const handleChange = (e) =>{
+        setSearch(e.target.value)
+        searchItems(e.target.value)
+    }
+
   return (
     <div className='nav'>
         <Link to='/' className="logo">
@@ -31,7 +37,7 @@ export default function Navbar({ user }) {
         </Link>
 
         <div className="search">
-            <input type='text' placeholder="Search an item"/>
+            <input type='text' placeholder="Search an item" value={search} onChange={handleChange}/>
             <div>
                 <i className="fa-sharp fa-solid fa-magnifying-glass" />
             </div>
