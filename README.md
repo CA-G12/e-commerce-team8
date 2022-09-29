@@ -26,6 +26,14 @@ It's a basic e-commerce web application that sells clothes. The user can browse 
 - Clone the repository to your device (`git clone https://github.com/CA-G12/e-commerce-team8.git`).
 - Enter repo `cd e-commerce-team8`
 
+## How to run the project:
+- open the terminal inside the project folder.
+- npm i
+- npm run dev
+- in another terminial `cd client`
+- npm i
+- npm start
+
 ## Technologies:
 
 - JavaScript
