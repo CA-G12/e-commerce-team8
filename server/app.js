@@ -16,7 +16,7 @@ app.use(express.json());
 if (NODE_ENV === 'production'){
   app.use(express.static(join(__dirname, '..', 'client', 'build')));
 
-  app.get('*', (req, res) => {
+  app.get('*', (_req, res) => {
     res.sendFile(join(__dirname, '..', 'client', 'build'));
   });
 }
