@@ -29,16 +29,31 @@ function CartItem({ productInfo }) {
     }
 
     return (
-        <div className='cartItem'>
-            <p>{productInfo.title}</p>
-            <p>{productInfo.price}</p>
-            <img src={productInfo.imgurl} alt={productInfo.title} />
-            <p>{productInfo.category}</p>
-            <button type='button' onClick={() => {
-                cancelProduct(productInfo.product_id)
-            }}>Delete</button>
+      <div className="cartItem">
+        <div className="imgBox">
+          <img src={productInfo.imgurl} alt={productInfo.title} />
         </div>
-    )
+        <div className="content">
+          <div className="category">
+            <p>{productInfo.category}</p>
+          </div>
+          <div className="productName">
+            <h3>{productInfo.title}</h3>
+          </div>
+          <div className="price">
+            <p>{productInfo.price}$</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={() => {
+            cancelProduct(productInfo.product_id);
+          }}
+        >
+          Delete
+        </button>
+      </div>
+    );
 };
 
 export default CartItem;
