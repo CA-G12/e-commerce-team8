@@ -5,20 +5,28 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Pagination({
   productsPerPage,
   totalProducts,
   current,
+  currentPage
 }) {
   const pageNumber = [];
+  const [pageNum, setPageNum] = useState(1)
 
   for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
     pageNumber.push(i);
   }
+
+  useEffect(() => {
+    setPageNum(currentPage)
+  }, [currentPage]);
+
   const numberHndleChange = (e) => {
     current(Number(e.target.id));
+    setPageNum(Number(e.target.id))
   };
 
   return (
@@ -39,12 +47,13 @@ export default function Pagination({
             <button
               type="button"
               id={number}
-              // href="#"
               style={{
                 textDecoration: "none",
-                color: "#77C754",
+                color: pageNum === number ? "#000" : "#77C754",
                 border: 0,
                 backgroundColor: "transparent",
+                cursor: "pointer",
+                fontSize: "1.1rem"
               }}
               onClick={numberHndleChange}
             >
