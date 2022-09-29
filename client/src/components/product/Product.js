@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate, Navigate } from 'react-router-dom'
 import axios from 'axios'
 import swal from 'sweetalert';
 import Navbar from '../navbar/Navbar'
@@ -8,7 +8,9 @@ import './Product.css'
 
 export default function Product(props) {
    const location = useLocation()
+   const navigate = useNavigate();
    const { name } = location.state || ''
+
    const [data, setData] = useState(null)
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function Product(props) {
       swal(res.data.message, '', "success");
     })
     .catch((err) => {
-      window.location.href = '/signup'
+      navigate('/signin')
     })
   }
 
