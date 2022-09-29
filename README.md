@@ -1,10 +1,12 @@
 # Wearable shop website
 
+## **Live Website** <img src="https://i.imgur.com/QsX6030.png" style="height: 50px; width: 50px; margin-bottom: 20px;">
+ <span id="live"></span>
+You can check the website here [**Heroku**](https://clothes-and-more.herokuapp.com/).
 
 ## Links
 
-### [Live Demo](https://clothes-and-more.herokuapp.com/)
-### [figma design](https://www.figma.com/file/IULL5pi2GbkANR9HHCN18M/Untitled?node-id=13%3A162)
+- [Figma design](https://www.figma.com/file/IULL5pi2GbkANR9HHCN18M/Untitled?node-id=13%3A162)
 
 ## ER-diagram
 
@@ -27,6 +29,7 @@ It's a basic e-commerce web application that sells clothes. The user can browse 
 - Enter repo `cd e-commerce-team8`
 
 ## How to run the project:
+
 - open the terminal inside the project folder.
 - npm i
 - npm run dev
