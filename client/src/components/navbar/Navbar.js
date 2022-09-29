@@ -13,7 +13,8 @@ export default function Navbar({ user }) {
 
     useEffect(() =>{
         setUserName(user)
-    }, [])
+    }, [user])
+    
 
     const handleSignOut = () => {
         axios.get('/signout')
