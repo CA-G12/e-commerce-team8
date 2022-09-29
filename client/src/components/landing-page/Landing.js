@@ -61,6 +61,7 @@ export default function Landing() {
         productsPerPage={productsPerPage}
         totalProducts={50}
         current={current}
+        currentPage = {currentPage}
       />
     </>
   );
