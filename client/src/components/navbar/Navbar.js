@@ -38,7 +38,7 @@ export default function Navbar({ user }) {
         </div>
 
         {userName ? ( <div  className="user">
-            <h2>{user}</h2>
+            <h2>{userName}</h2>
             <Link to='/user/cart'><i className="fa-solid fa-cart-shopping" /></Link>
             <i className="fa-solid fa-right-from-bracket" onClick={handleSignOut} />
         </div>) : ( <ul>
