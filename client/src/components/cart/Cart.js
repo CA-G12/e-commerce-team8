@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CartItem from "../cartItem/CartItem";
 import Navbar from "../navbar/Navbar";
+import "./Cart.css";
 
 function Cart() {
   const [data, setData] = useState(null);
@@ -22,17 +23,21 @@ function Cart() {
   if (!data) return <div>Loading ...</div>;
 
   return data.length ? (
-    <div className="cart">
+    <>
       <Navbar user={username} />
-      {data.map((e) => (
-        <CartItem key={e.product_id} productInfo={e} />
-      ))}
-    </div>
+      <div className="cart">
+        {data.map((e) => (
+          <CartItem key={e.product_id} productInfo={e} />
+        ))}
+      </div>
+    </>
   ) : (
-    <div className="cart">
+    <>
       <Navbar user={username} />
-      <p>You have not bought anything yet</p>
-    </div>
+      <div className="cart">
+        <p style={{ padding: "30px" }}>You have not bought anything yet</p>
+      </div>
+    </>
   );
 }
 
