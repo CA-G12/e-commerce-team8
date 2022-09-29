@@ -51,7 +51,7 @@ export default function Landing() {
     categoryHandleChane(newcategory);
   }, [currentPage]);
 
-  if (!data) return <div> Loading........</div>;
+  if (!data || !user) return <div> Loading........</div>;
   return (
     <>
       <Navbar user={user} />
