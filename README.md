@@ -10,15 +10,15 @@
 
 ![e-commerce ER-diagram](https://user-images.githubusercontent.com/105603919/192963329-68ef1fbc-4394-4442-bb1b-cee86f2cf7ea.png)
 
-## User Journey
-
-First, when you open the application landing page shows all products with some filters debend on category title.
+## Description
+It's a basic e-commerce web application that sells clothes. The user can browse through the products even when they're not logged in. Still they can sign up and sign in in order to purchase roducts.
 
 ## User Stories
 
-- A user should be able to sign up or sign in.
-- A user should be able to see all products that he added in his cart when he moved to the cart page.
-- A user should be able to delete any product from his cart.
+- The user should be able to sign up or sign in.
+- The user can view the produc's details when they're not signed in.
+- The user should be able to see all products that he added in his cart when he moved to the cart page.
+- The user should be able to delete any product from his cart.
 
 ## How To clone Our App:
 
