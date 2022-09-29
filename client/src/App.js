@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {Landing, Signin, Signup, Product, Cart} from "./components";
 import './App.css'
 
@@ -12,6 +12,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/user/cart" element={<Cart />} />
+        <Route path='*' element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
