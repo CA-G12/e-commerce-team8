@@ -32,7 +32,6 @@ function Cart() {
     <div className="cart">
       <Navbar user={username} />
       <p>You have not bought anything yet</p>
-      <p>hello</p>
     </div>
   );
 }
